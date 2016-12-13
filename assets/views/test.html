@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>testing</title>
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+
+<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js" ></script>
+</head>
+<body>
+<section ng-app="myApp" ng-controller="MainCtrl">
+    
+    <div id="space-for-buttons"></div>
+    <addbuttonsbutton></addbuttonsbutton>
+</section>
+</body>
+<script type="text/javascript">
+	var myApp = angular.module('myApp', []);
+
+/*function MainCtrl($scope) {
+	$scope.count = 0;
+}
+*/
+
+myApp.controller('MainCtrl', function ($scope) {
+	$scope.count = 0;
+	$scope.name = "directive";
+});
+
+//Directive that returns an element which adds buttons on click which show an alert on click
+myApp.directive("addbuttonsbutton", function(){
+	return {
+		restrict: "E",
+		template: '<a ng-click="addForm()"><button addbuttons id="addbtn" class="add-button mdl-button-float mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">add</i></button></a>'
+	}
+});
+
+//Directive for adding buttons on click that show an alert on click
+myApp.directive("addbuttons", function($compile){
+		return function(scope, element, attrs){
+		element.bind("click", function(){
+			scope.count++;
+			angular.element(document.getElementById('space-for-buttons')).append($compile('<br><div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"><input class="mdl-textfield__input" type="number" step="0.01" name="pricei'+scope.count+'" ng-model="pricei'+scope.count+'"><label class="mdl-textfield__label" for="sample'+scope.count+'">Price'+scope.count+'</label></div>')(scope));
+		});
+	};
+});
+
+/*Directive for showing an alert on click
+myApp.directive("alert", function(){
+	return function(scope, element, attrs){
+		element.bind("click", function(){
+			console.log(attrs);
+			//alert("This is alert #"+attrs.//alert);
+		});
+	};
+});
+*/
+</script>
+
+<style type="text/css">
+	section{
+    padding: 2em;   
+}
+button{
+    padding:0.3em;
+    margin: 0.3em;
+}
+
+</style>
+</html>

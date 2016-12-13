@@ -1,0 +1,235 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Food and Symptom Tracker</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js" ></script>
+    <script type="text/javascript" src="../../admin/js/controllers/food_controller.js" ></script>
+
+    <!--Jquery Validator scripts-->
+    <script src="http://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="../../admin/js/foodvalidator.js"></script>
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/favicon2.png">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.cyan-light_blue.min.css">
+    <link rel="stylesheet" href="../../admin/css/styles.css">
+    
+  </head>
+  <body >
+    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+      <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Add Food</span>
+          <div class="mdl-layout-spacer"></div>
+
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+            <li class="mdl-menu__item">About</li>
+            <li class="mdl-menu__item">Contact</li>
+            <li class="mdl-menu__item">Legal information</li>
+          </ul>
+        </div>
+      </header>
+      <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="demo-drawer-header">
+     
+          <div class="demo-avatar-dropdown">
+            <span>Admin</span>
+            <div class="mdl-layout-spacer"></div>
+           <!-- <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+              <i class="material-icons" role="presentation">arrow_drop_down</i>
+              <span class="visuallyhidden">Accounts</span>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+              <!--<li class="mdl-menu__item">hello@example.com</li>
+              <li class="mdl-menu__item">info@example.com</li>
+              <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
+                          <li class="mdl-menu__item">Logout</li>
+            </ul>-->
+
+          </div>
+        </header>
+         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+          <a class="mdl-navigation__link" href="/admin"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
+          <a class="mdl-navigation__link" href="/admin/food"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_dining</i>Manage Food</a>
+          <a class="mdl-navigation__link" href="/admin/rest"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">restaurant</i>Manage Restaurant</a>
+          <a class="mdl-navigation__link" href="/admin/feedback" ><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">feedback</i>Manage Feedback</a>
+         <a class="mdl-navigation__link" id="logout"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">power_settings_new</i>Logout</a>
+     </nav>
+      </div>
+      <main id="main" class="mdl-layout__content mdl-color--grey-100">
+          <div class="formContainter" style="margin: 5% auto auto auto; width:70%; " >
+
+    <form method="POST" action="../../admin/food/add" class="form" id="foodform" >
+          
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" >
+           <input class="mdl-textfield__input" type="text"  name="fname" >
+           <label class="mdl-textfield__label" for="fname">Food Name</label>
+          </div>
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input class="mdl-textfield__input"  id="calories" name="calories">
+           <label class="mdl-textfield__label" for="sample3">Calories</label>
+          </div>
+
+          <!-- div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input class="mdl-textfield__input" id="calfat" name="calfat">
+           <label class="mdl-textfield__label" for="sample3">Calories from Fat</label>
+          </div-->
+
+         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input class="mdl-textfield__input" id="fat" name="fat">
+           <label class="mdl-textfield__label" for="sample3">Fat</label>
+          </div>
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input class="mdl-textfield__input" id="carbs" name="carbs" >
+           <label class="mdl-textfield__label" for="sample3">Carbohydrates</label>
+          </div>
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input class="mdl-textfield__input" id="fiber" name="fiber" >
+           <label class="mdl-textfield__label" for="sample3">Fiber</label>
+          </div>
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input class="mdl-textfield__input" id="protein" name="protein" >
+           <label class="mdl-textfield__label" for="sample3">Protein</label>
+          </div>
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input class="mdl-textfield__input" id="vitamin_a" name="vitamin_a">
+           <label class="mdl-textfield__label" for="sample3">Vitamin A</label>
+          </div>
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input class="mdl-textfield__input" id="vitamin_c" name="vitamin_c">
+           <label class="mdl-textfield__label" for="sample3">Vitamin C</label>
+          </div>
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input class="mdl-textfield__input" id="calcium" name="calcium" >
+           <label class="mdl-textfield__label" for="sample3">Calcium</label>
+          </div>
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input class="mdl-textfield__input" id="iron" name="iron" >
+           <label class="mdl-textfield__label" for="sample3">Iron</label>
+          </div>
+
+           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input class="mdl-textfield__input"  id="serving" name="serving" >
+           <label class="mdl-textfield__label" for="sample3">Serving Size(g)</label>
+          </div>
+
+           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input class="mdl-textfield__input"  id="serving" name="category"  type="number">
+           <label class="mdl-textfield__label" for="sample3">Category</label>
+          </div>
+          
+       <!--   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input class="mdl-textfield__input" id="nutri_dens" name="nutri_dens" >
+           <label class="mdl-textfield__label" for="sample3">Nutrition Density</label>
+          </div>
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input class="mdl-textfield__input" type="text" step="0.01" id="cholestrol" name="cholestrol">
+           <label class="mdl-textfield__label" for="sample3">Cholestrol</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input class="mdl-textfield__input" type="text" step="0.01" id="sodium" name="sodium" >
+           <label class="mdl-textfield__label" for="sample3">Sodium</label>
+          </div>
+
+
+          <div>
+      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="fav">
+        <input type="checkbox" id="fav" name="favourite" class="mdl-checkbox__input" >
+        <span class="mdl-checkbox__label">Favourite</span>
+      </label>
+</div>
+<div>
+      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="act">
+        <input type="checkbox" id="act" name="active" class="mdl-checkbox__input">
+        <span class="mdl-checkbox__label">Active</span>
+      </label>
+</div>
+
+          <div id="ingredients-containter">
+          <p>Ingrediants</p>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input class="mdl-textfield__input" type="text" name="ingred1">
+           <label class="mdl-textfield__label" for="sample3">Ingredient 1</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input class="mdl-textfield__input" type="text" name="ingred2">
+           <label class="mdl-textfield__label" for="sample3">Ingredient 2</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input class="mdl-textfield__input" type="text" name="ingred3">
+           <label class="mdl-textfield__label" for="sample3">Ingredient 3</label>
+          </div>
+          -->
+          <div class="">
+             <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+             Submit  <i class="material-icons right">send</i>
+            </button>
+          </div>
+    </form>
+ </div>
+
+
+
+
+      </main>
+    </div>
+    
+    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+   <script type="text/javascript" src="../js/login.js"></script>
+  </body>
+</html>
