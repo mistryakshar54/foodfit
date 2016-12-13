@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+	<!-- Material design js and css files-->
+		<!-- Compiled and minified CSS -->
+						         
+				<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+	
+		<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+		<script src="http://code.jquery.com/jquery-3.1.1.js"
+        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+        crossorigin="anonymous"></script>
+        <script type="text/javascript" src="../../node_modules/jquery-validation/dist/jquery.validate.js"></script>
+  		<link rel="stylesheet" href="css/mngfood.css">
+	<title>User</title>
+</head>
+<body>
+
+	<div>
+		<h3 class="mdl-layout" >Update User</h3>
+	</div>
+	<div style="margin:auto; width:80%;">
+		<form id="user-form" method="post" action="../admin/user/add">
+			<table>
+				<tr>
+					<td>
+						<div class="mdl-textfield mdl-js-textfield dl-textfield--floating-label">
+	    					 <input class="mdl-textfield__input col-span-3 validate" type="text" id="fname" name="fname">
+	   				 		<label class="mdl-textfield__label data-error" for="sample3" >Full Name</label>
+   						</div>
+					</td>
+					<td>
+							<div class="mdl-textfield mdl-js-textfield dl-textfield--floating-label">
+	    					 <input class="mdl-textfield__input col-span-3 validate" type="text" id="uname" name="uname">
+	   				 		<label class="mdl-textfield__label data-error" for="sample3" >User Name</label>
+					</td>		
+				</tr>
+				<tr>
+					<td>
+							<div class="mdl-textfield mdl-js-textfield dl-textfield--floating-label">
+	    					 <input class="mdl-textfield__input col-span-3 validate" type="password" id="pass" name="password">
+	   				 		<label class="mdl-textfield__label data-error" for="sample3" >Password</label>
+					</td>
+					<td>
+							<div class="mdl-textfield mdl-js-textfield dl-textfield--floating-label">
+	    					 <input class="mdl-textfield__input col-span-3 validate" type="password" id="cpass" name="cpassword">
+	   				 		<label class="mdl-textfield__label data-error" for="sample3" >Confirm Password</label>
+					</td>		
+				</tr>
+				<tr>
+					<td>
+						<label class="mdl-radio mdl-js-radio" for="male">
+				            <input type="radio" id="male" name="gender" class="mdl-radio__button" checked>
+				            <span class="mdl-radio__label">Male</span>
+				         </label>
+					     <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="female">
+				            <input type="radio" id="female" name="gender" class="mdl-radio__button" >
+				            <span class="mdl-radio__label">Female</span>
+				         </label>
+					</td>
+					<td>
+						<input type="date" name="dob" class="datepicker"> 	
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="mdl-textfield mdl-js-textfield dl-textfield--floating-label">
+	    				<input class="mdl-textfield__input col-span-3 validate" type="numeric" id="height" name="height">
+	   				 	<label class="mdl-textfield__label data-error" for="height" >Height</label>
+					</td>
+					<td>
+						<div class="mdl-textfield mdl-js-textfield dl-textfield--floating-label">
+	    				<input class="mdl-textfield__input col-span-3 validate" type="numeric" id="weight" name="weight">
+	   				 	<label class="mdl-textfield__label data-error" for="weight" >Weight</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="mdl-textfield mdl-js-textfield dl-textfield--floating-label">
+	    				<input class="mdl-textfield__input col-span-3 validate" type="text" id="country" name="country">
+	   				 	<label class="mdl-textfield__label data-error" for="country" >Country</label>
+					</td>
+					<td>
+						<div class="mdl-textfield mdl-js-textfield dl-textfield--floating-label">
+	    				<input class="mdl-textfield__input col-span-3 validate" type="numeric" id="zipcode" name="code">
+	   				 	<label class="mdl-textfield__label data-error" for="zipcode" >Zipcode</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="mdl-textfield mdl-js-textfield dl-textfield--floating-label">
+	    				<input class="mdl-textfield__input col-span-3 validate" type="numeric" id="calorie_intake" name="cal">
+	   				 	<label class="mdl-textfield__label data-error" for="calorie_intake" >Calorie Intake</label>
+					</td>
+					<td>
+						<div class="mdl-textfield mdl-js-textfield dl-textfield--floating-label">
+	    				<input class="mdl-textfield__input col-span-3 validate" type="numeric" id="weight_lost" name="loss">
+	   				 	<label class="mdl-textfield__label data-error" for="weight_lost" >Weight Lost</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="isalerigic">
+						  <input type="checkbox" id="isalerigic" class="mdl-switch__input" name="isalg" checked>
+						  <span class="mdl-switch__label">is Alergic?	</span>
+						</label>
+					</td>
+					<td>
+						<div class="mdl-textfield mdl-js-textfield dl-textfield--floating-label">
+	    				<input class="mdl-textfield__input col-span-3 validate" type="numeric" id="dsg" name="goalstep">
+	   				 	<label class="mdl-textfield__label data-error" for="dsg" >Daily Step Goal</label>
+					</td>
+				</tr>
+			</table>
+			<button type="submit" name="Submit" value="Submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Submit</button>
+		</form>
+	</div>
+	<script type="text/javascript">
+				
+	
+	 $().ready(function() { 
+		$("#user-form").validate({
+     
+	        rules: {
+	           fname: {
+	                required: true,
+	                minlength: 5
+	            },
+	           lname: {
+	                required: true,
+	                minlength: 5
+	            },
+	            height: "required",
+	            weight:"required",
+	            country: "required",
+	            zipcode:{
+	            	required:true,
+	            	minlength:6,
+	            	maxlength:6
+	            },
+	            pass:{
+	            	required:true,
+	            	minlength:8
+	            },
+	            cpass:{
+	            	required:true,
+	            	equalTo:("#pass")
+	            }
+	           	date:"required"
+
+	          },
+	        //For custom messages
+	        messages: {
+	            fname:{
+	                required: "Restaurant Name is Required",
+	                minlength: "Enter at least 5 characters"
+	            },
+	            lname:{
+	                required: "Restaurant Name is Required",
+	                minlength: "Enter at least 5 characters"
+	            },
+	            date:{
+	            	required:"Date of Birth is Required"
+	            },
+	            height:{
+	            	required:"height is Required"
+	            },
+	            weight:{
+	            	required:"Weight is Required"
+	            },
+	            country:{
+	            	required:"Country is Required"
+	            },
+
+	            zipcode:{
+	              required:"Enter Zipcode",
+	              maxlength:"Enter valid zipcode",
+	              minlength:"Enter valid zipcode"
+	            } 
+	        } /*,
+	        errorElement : 'div',
+	        errorPlacement: function(error, element) {
+	          var placement = $(element).data('error');
+	          if (placement) {
+	            $(placement).append(error)
+	          } else {
+	            error.insertAfter(element);
+	          }
+	        }*/										
+	     });
+	});
+		        
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+	    <title>Report</title>
+
+	    <!-- Add to homescreen for Chrome on Android -->
+	    <meta name="mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+	    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+	  
+		
+		<script src="js/Chart.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>FoodFit</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+
+    <!-- Template styles -->
+    <style rel="stylesheet">
+        /* TEMPLATE STYLES */
+        /* Necessary for full page carousel*/
+
+        html,
+        body,
+        .view {
+            height: 100%;
+        }
+        /* Navigation*/
+        .nav-tabs
+        {
+            border-bottom: 0px;
+        }
+        .navbar {
+            background-color: transparent;
+            padding: 20px;
+        }
+        .foodwp
+        {
+            padding-bottom: 350px;
+            background-image: url("./img/food.jpeg");
+            background-repeat: no-repeat;
+        }
+        .ni
+        {
+            margin-top: 5px;
+            padding: 3%;
+        }
+        .scrolling-navbar {
+            -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            transition: background .5s ease-in-out, padding .5s ease-in-out;
+        }
+
+        .top-nav-collapse {
+            background-color: #ff6700;
+        }
+        .h1{
+          color: #ff6700;
+        }
+
+        footer.page-footer {
+            background-color: #ff6700;
+            margin-top: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .navbar {
+                background-color: #f6700;
+            }
+        }
+        /*.navbar.navbar-dark .navbar-nav .nav-item a
+        {*/
+          /*letter-spacing: 0.3em;*/
+         /* padding: 5px;
+        }*/
+        .navbar .navbar-nav .nav-item
+        {
+         padding: 5px;   
+         font-weight: bolder;
+        }
+        .top-nav-collapse .navbar.navbar-dark .navbar-nav .nav-item.active
+        {
+          background-color: #fff
+        }
+        .top-nav-collapse .navbar.navbar-dark .navbar-nav .nav-item.active a
+        {
+          color: #ff6700;
+        }
+        /* Carousel*/
+        body
+        {background-color: #f7f4f4;}
+    </style>
+
+</head>
+
+<body>
+
+
+    <!--Navbar-->
+<nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
+
+        <!-- Collapse button-->
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx">
+            <i class="fa fa-bars"></i>
+        </button>
+
+        <div class="container">
+
+            <!--Collapse content-->
+            <div class="collapse navbar-toggleable-xs" id="collapseEx">
+                <!--Navbar Brand-->
+                <a class="navbar-brand" href="index.html" target="_blank"><b>FOOD</b><i>FIT</i></a>
+                <!--Links-->
+                <ul class="nav navbar-nav pull-right">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">HOME <span class="sr-only">(current)</span></a>
+                    </li>
+                    <div id="navsecond" style="display:inline-block;">
+                    <li class="nav-item">
+                        <div class="dropdown">
+
+                            <!--Trigger-->
+                            <a class="nav-link dropdown-toggle" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="uname"></span> </a>
+
+                            <!--Menu-->
+                            <div class="dropdown-menu" aria-labelledby="userMenu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                <a class="dropdown-item" href="Update_profile.html">Update Profile</a>
+                                <a class="dropdown-item" id="logout">Logout</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+
+                            <!--Trigger-->
+                            <a class="nav-link dropdown-toggle" id="foodMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FOOD</a>
+
+                            <!--Menu-->
+                            <div class="dropdown-menu" aria-labelledby="foodMenu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                <a class="dropdown-item" href="foodinfonew.html">Food Journal</a>
+                                <a class="dropdown-item" href="FoodCustomInfo.html">My Foods</a>
+                                <a class="dropdown-item" href="searchfood.html">Search Food</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+
+                            <!--Trigger-->
+                            <a class="nav-link dropdown-toggle" id="reportMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">REPORT</a>
+
+                            <!--Menu-->
+                            <div class="dropdown-menu" aria-labelledby="reportMenu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                <a class="dropdown-item" href="stepreport.html">View Steps Report</a>
+                                <a class="dropdown-item" href="foodreport.html">View Food Report</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <div class="dropdown">
+
+                            <!--Trigger-->
+                          <!--   <a class="nav-link dropdown-toggle" id="reportMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">STEPS</a>
+ -->
+                            <!--Menu-->
+                         <!--    <div class="dropdown-menu" aria-labelledby="reportMenu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                <a class="dropdown-item" href="#">View Food Report</a>
+                                <a class="dropdown-item" href="#">View Steps Report</a>
+                            </div>
+                        </div>
+                    </li> -->
+                    </div>
+                </ul>
+            </div>
+            <!--/.Collapse content-->
+
+        </div>
+
+</nav>
+    <!--/.Navbar-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="section foodwp">
+            
+        </div>
+    </div>
+</div>
+   
+
+<!--Section: Features v.3-->
+<div class="container-fluid ">
+<div class="row">
+  <!-- <div class="section"> -->
+
+        <div class="sec col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h1 class="h1-responsive offset-md-4 offset-sm-2 offset-xs-2">Fitness Report</h1> 
+        <br/><br/>   
+        <main id="main" class="">
+		 <div class="mdl-grid demo-content">
+		  	<div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid ">
+         	 	<div class="demo-updates mdl-card mdl-shadow--3dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop" style="margin:auto;padding:auto;">
+					<!--<h2 class="mdl-card__title-text"  style="margin:auto;">Fitness Count</h2>-->
+					<div class="mdl-card__title mdl-card--expand mdl-color--teal-0" style="background-color: #f3f3f3;border-radius: 20px;height:50%;width:50%;margin: auto;">
+              		<canvas id="canvas" style="height:50%; width:50%; margin:auto;" ></canvas>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</main>
+        
+        </div>
+    
+  <!-- </div> -->
+</div>
+</div>
+<!--/Section: Features v.3-->
+
+
+
+    <!-- </feature> -->
+
+    <!--Footer-->
+    <footer class="page-footer center-on-small-only">
+
+        <!--Footer Links-->
+        <div class="container-fluid">
+            <div class="row">
+
+                <!--First column-->
+                <div class="col-md-3 offset-md-1">
+                    <h1 class="display-4"><b>FOOD</b><i>FIT</i></h1>
+                    
+                    
+                </div>
+                <!--/.First column-->
+
+               
+                <!--Second column-->
+                <div class="col-md-5 offset-md-1">
+                    <ul class="nav nav-tabs md-pills pills-ins" role="tablist">
+                        <li class="nav-item ni"><a href="#!">HOME</a></li>
+                        <li class="nav-item ni"><a href="#!">FOOD</a></li>
+                        <li class="nav-item ni"><a href="#!">REPORTS</a></li>
+                        <li class="nav-item ni"><a href="#!">APP</a></li>
+                        <li class="nav-item ni"><a href="#!">LOGIN/SIGNUP</a></li>
+                    </ul>
+                </div>
+                <!--/.Second column-->
+
+            </div>
+        </div>
+        <!--/.Footer Links-->
+
+        <!--Call to action-->
+        <!-- <div class="call-to-action">
+            <h4>Material Design for Bootstrap</h4>
+            <ul>
+                <li>
+                    <h5>Get our UI KIT for free</h5></li>
+                <li><a target="_blank" href="http://mdbootstrap.com/getting-started/" class="btn btn-danger">Sign up!</a></li>
+                <li><a target="_blank" href="http://mdbootstrap.com/material-design-for-bootstrap/" class="btn btn-default">Learn more</a></li>
+            </ul>
+        </div> -->
+        <!--/.Call to action-->
+
+        <!--Copyright-->
+        <div class="footer-copyright">
+            <div class="container-fluid">
+                © 2016 Copyright: <a href="#"> <b>FOOD</b><i>FIT</i> </a>
+
+            </div>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+
+
+    </script>
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+<script>
+    var dates = [];
+    var steps = [];
+    var m = new Date();
+    var today = m.toLocaleDateString();
+      function searchforuser(uid,dd,mm,yyyy) {
+        // body...
+       // var today=td;
+        //alert("in searchforuser");
+         var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+               //alert("data"+xhttp.responseText);
+                 var jsonObj = JSON.parse(xhttp.responseText);
+                 for(var i=0;i<15;i++)
+                 {
+                     var dd = m.getDate();
+                     var mm =m.getMonth()+1;
+                     if(dd < 10)
+                     {
+                         var dd = "0"+dd;
+                     }
+                     if(mm < 10)
+                     {
+                         var mm = "0"+mm;
+                     }
+                     dates[i] = dd+"/"+mm+"/"+m.getFullYear();
+                    // console.log(jsonObj.length);
+                     for(var j=0;j<jsonObj.length;j++)
+                     {
+                    //     console.log(jsonObj[j].date+" "+dates[i]+jsonObj[j].totalStep);
+                            
+                     //    if(jsonObj.date!=null||jsonObj.date != undefined){
+                            //alert(jsonObj[j].date);
+                                if(jsonObj[j].date === dates[i])
+                                    {
+                                        console.log("true");
+                                        steps[i] = jsonObj[j].totalStep;
+                                    }
+                         
+                       //     }
+                             
+                      
+                     }
+                     
+                     console.log("final"+dates[i]+" "+steps[i]);
+                     m.setDate(m.getDate()-1);
+                     plotChart();
+                     
+                 }
+               
+            }
+          };
+          xhttp.open("GET", "http://sen6.herokuapp.com/user/stepinfo/userstepinfo/"+uid+"/"+dd+'/'+mm+'/'+yyyy, true);
+          xhttp.send();
+    }
+  
+
+	
+
+	/*var doughnutData = [
+                {
+                    value: 1800,
+                    color:"#F7464A",
+                    highlight: "#FF5A5E",
+                    label: "Calories"
+                },
+                {
+                    value: 400,
+                    color: "#F3F3F3",
+                    highlight: "#F3F3F3",
+                    label: ""
+                }
+                
+
+            ];
+
+            window.onload = function(){
+                
+    };*/
+
+	window.onload = function(){
+      //alert("sgggggggggggggggg");
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+
+        var yyyy = today.getFullYear();
+        if(dd<10){
+            dd='0'+dd;
+        } 
+        if(mm<10){
+            mm='0'+mm;
+        } 
+        var today = dd+'/'+mm+'/'+yyyy;
+       // alert(today);
+         //   alert(sessionStorage.getItem("uid"));
+            searchforuser(sessionStorage.getItem("uid"),dd,mm,yyyy);
+            
+
+
+		
+	//	window.myDoughnut = new Chart(ctx2).Doughnut(doughnutData, {responsive : true});
+	}
+    function plotChart(){
+    var barChartData = {
+		 labels: dates,
+   			datasets : [
+			{
+				fillColor : "rgba(255,103,0,0.8)",
+				strokeColor : "rgba(255,103,0,1)",
+				highlightFill: "rgba(255,103,0,0.8)",
+				highlightStroke: "rgba(220,220,220,1)",
+				data : steps
+				/*data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]*/
+			}
+			
+			
+		],
+
+			//barPercentage:05
+			//barThickness: 5px	
+			scales : {
+				xAxes : [{
+					stacked:true
+				}],
+				yAxes :[{
+					stacked:true
+				}]
+			}
+	
+	}
+        var ctx = document.getElementById("canvas").getContext("2d");
+		/*ctx.lineWidth = 15;
+		ctx.lineCap = "round";
+		ctx.beginPath();
+		ctx.moveTo(100,100);
+		ctx.lineWidth = 15;
+		ctx.lineCap = "round";
+		ctx.lineTo(200, 200);
+		ctx.stroke();
+
+		*/
+	///	var ctx2 = document.getElementById("chart-area").getContext("2d");
+        
+		window.myBar = new Chart(ctx).Bar(barChartData, {
+			responsive : true
+		});
+    }
+	        
+
+	</script>
+    <script type="text/javascript" src="js/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+.formContainter{
+  margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+.mdl-js-textfield{
+    width: 100%;
+}

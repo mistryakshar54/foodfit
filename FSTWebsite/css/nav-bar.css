@@ -1,0 +1,115 @@
+  table {
+          border-collapse: collapse;
+        }
+
+        td {
+          border: 1px solid #cecfd5;
+          padding: 10px 10px;
+        }
+
+        html,
+        body,
+        .view {
+            height: 100%;
+        }
+        /* Navigation*/
+        /*.nav-tabs
+        {
+            border-bottom: 0px;
+        }*/
+        .navbar {
+            background-color: #ff6700;
+            padding: 20px;
+        }
+        .foodwp
+        {
+            padding-bottom: 350px;
+            background-image: url("./img/food.jpeg");
+            background-repeat: no-repeat;
+        }
+        .ni
+        {
+            margin-top: 5px;
+            padding: 3%;
+        }
+        .scrolling-navbar {
+            -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            transition: background .5s ease-in-out, padding .5s ease-in-out;
+        }
+
+        .top-nav-collapse {
+            background-color: #ff6700;
+        }
+        .h1{
+          color: #ff6700;
+        }
+
+        footer.page-footer {
+            background-color: #ff6700;
+            margin-top: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .navbar {
+                background-color: #f6700;
+            }
+        }
+        /*@media only screen and (min-width: 768px) {
+            .nav-tabs {
+                    display: table-caption;
+                    }
+        
+        }*/
+
+        @media 
+        (max-device-width: 800px) 
+        {
+            .nav-tabs
+            {
+                display: table-row!important;
+            }
+        }
+        
+        /*.navbar.navbar-dark .navbar-nav .nav-item a
+        {*/
+          /*letter-spacing: 0.3em;*/
+         /* padding: 5px;
+        }*/
+        .navbar .navbar-nav .nav-item
+        {
+         padding: 5px;   
+         font-weight: bolder;
+        }
+        .top-nav-collapse .navbar.navbar-dark .navbar-nav .nav-item.active
+        {
+          background-color: #fff
+        }
+        .top-nav-collapse .navbar.navbar-dark .navbar-nav .nav-item.active a
+        {
+          color: #ff6700;
+        }
+        /* Carousel*/
+        body
+        {
+            background-color: #f7f4f4;
+        }
+        #tabl 
+        {
+            border: 0;
+            padding: 2.7rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            margin-bottom: -20px;
+            z-index: 2;
+            display: table-caption;
+            position: relative;
+        }
+        .nav-tabs .nav-item {
+            float: left;
+            margin-bottom: 7px;
+        }
+        .nav-tabs .nav-item:hover,.nav-tabs .nav-item:hover:active{
+            background: #ff6700;
+            color: #f7f4f4;
+        }

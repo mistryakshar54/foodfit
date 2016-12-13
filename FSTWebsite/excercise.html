@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+	    <title>Report</title>
+
+	    <!-- Add to homescreen for Chrome on Android -->
+	    <meta name="mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+	    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+	    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+	  
+		
+		<script src="js/Chart.js"></script>
+		<style type="text/css">
+			{
+				
+			}
+		</style>
+	</head>
+	<body>
+	<main id="main" class="">
+		 <div class="mdl-grid demo-content">
+		  	<div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid ">
+         	 	<div class="demo-updates mdl-card mdl-shadow--3dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop" style="margin:auto;padding:auto;">
+					<h2 class="mdl-card__title-text" style="margin:10px auto;">Fitness Count</h2>
+					<div class="mdl-card__title mdl-card--expand mdl-color--teal-0" style="background-color: #f3f3f3;margin: 10px;border-radius: 20px;">
+              		<canvas id="canvas" style="height:inherit; width:inherit; margin:auto;" ></canvas>
+					</div>
+				</div>
+			</div>
+
+			<div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid ">
+         	 	<div class="demo-updates mdl-card mdl-shadow--3dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop" style="margin:auto;padding:auto;">
+					<h2 class="mdl-card__title-text" style="margin:10px auto;">Nutrition Goal</h2>
+					<div class="mdl-card__title mdl-card--expand mdl-color--teal-00" style="background-color: #f3f3f3;margin: 10px;border-radius: 20px;">
+              		<div id="canvas-holder">
+			            <canvas id="chart-area" width="inherit" height="inherit">
+			            </canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<script>
+
+	var barChartData = {
+		 labels: ["9", "10", "11", "12", "13", "14", "15"],
+   			datasets : [
+			{
+				fillColor : "rgba(255,103,0,0.8)",
+				strokeColor : "rgba(255,103,0,1)",
+				highlightFill: "rgba(255,103,0,0.8)",
+				highlightStroke: "rgba(220,220,220,1)",
+				data : [1000, 6782,6598,1250,5000,3420,4260]
+				/*data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]*/
+			}
+			
+			
+		],
+
+			barPercentage:05
+			//barThickness: 5px	
+			/*scales : {
+				xAxes : [{
+					stacked:true
+				}],
+				yAxes :[{
+					stacked:true
+				}]
+			}*/
+	
+	}
+
+	var doughnutData = [
+                {
+                    value: 1800,
+                    color:"#F7464A",
+                    highlight: "#FF5A5E",
+                    label: "Calories"
+                },
+                {
+                    value: 400,
+                    color: "#F3F3F3",
+                    highlight: "#F3F3F3",
+                    label: ""
+                }
+                
+
+            ];
+
+            window.onload = function(){
+                
+    };
+
+	window.onload = function(){
+		var ctx = document.getElementById("canvas").getContext("2d");
+		/*ctx.lineWidth = 15;
+		ctx.lineCap = "round";
+		ctx.beginPath();
+		ctx.moveTo(100,100);
+		ctx.lineWidth = 15;
+		ctx.lineCap = "round";
+		ctx.lineTo(200, 200);
+		ctx.stroke();
+
+		*/
+		var ctx2 = document.getElementById("chart-area").getContext("2d");
+        
+		window.myBar = new Chart(ctx).Bar(barChartData, {
+			responsive : true
+		});
+		window.myDoughnut = new Chart(ctx2).Doughnut(doughnutData, {responsive : true});
+	}
+	        
+
+	</script>
+	</body>
+</html>
